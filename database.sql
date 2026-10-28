@@ -1,0 +1,13 @@
+-- Database Table Schema for Form Submission
+CREATE DATABASE IF NOT EXISTS `crud_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `crud_db`;
+
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(150) NOT NULL UNIQUE,
+    `phone` VARCHAR(15) NOT NULL,
+    `gender` ENUM('male', 'female', 'other') NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
